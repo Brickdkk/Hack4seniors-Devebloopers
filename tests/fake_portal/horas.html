@@ -1,0 +1,14 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Horas disponibles</title></head>
+<body><h1>Horas disponibles</h1><ul id="l"></ul>
+<script>
+  const q = new URLSearchParams(location.search);
+  const f = q.get('fecha') || '2026-10-02';
+  const dia = new Date(f + 'T12:00:00').toLocaleDateString('es-CL', {weekday: 'long', day: 'numeric', month: 'long'});
+  const ul = document.getElementById('l');
+  for (const [h, p] of [['09:30', 'Dra. Soto'], ['10:30', 'Dr. Pérez'], ['11:15', 'Dra. Soto']]) {
+    const a = document.createElement('a');
+    a.href = `/datos.html?fecha=${f}&hora=${h}&prof=${encodeURIComponent(p)}&esp=${q.get('esp') || ''}`;
+    a.textContent = `${dia}, ${h} - ${p}`;
+    const li = document.createElement('li'); li.appendChild(a); ul.appendChild(li);
+  }
+</script></body></html>

@@ -1,0 +1,16 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Datos del paciente</title></head>
+<body><h1>Datos del paciente</h1><p id="r"></p>
+<form method="get" action="/confirmacion.html" id="f">
+  <label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text">
+  <label for="rut">RUT</label><input id="rut" name="rut" type="text" placeholder="12.345.678-9">
+  <label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="text">
+  <button type="submit">Confirmar reserva</button>
+</form>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('r').textContent = `Reservando ${q.get('fecha')} ${q.get('hora')} con ${q.get('prof')}`;
+  for (const k of ['fecha', 'hora', 'prof', 'esp']) {
+    const i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = q.get(k) || '';
+    document.getElementById('f').appendChild(i);
+  }
+</script></body></html>

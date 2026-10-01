@@ -1,0 +1,7 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Confirmación</title></head>
+<body><h1>Hora confirmada</h1><p id="c">Cargando…</p>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('c').textContent =
+    `Código CONF-4821. Fecha ${q.get('fecha')} a las ${q.get('hora')} con ${q.get('prof')}. Paciente ${q.get('nombre')}, RUT ${q.get('rut')}, teléfono ${q.get('telefono')}.`;
+</script></body></html>
