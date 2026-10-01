@@ -1,6 +1,6 @@
-# Hack4Seniors: asistente de voz para la laptop
+# Hack4Seniors: asistente de voz para personas mayores
 
-La persona **mantiene apretada la barra espaciadora y habla** → la IA le responde **por el parlante de la laptop** de inmediato → en segundo plano un agente trabaja en el portal de la clínica → el resultado le llega por voz y al panel del cuidador.
+En esta version se usa el microfono y parlante del dispositivo, la persona **mantiene apretada la barra espaciadora y habla** → la IA le responde **por el parlante de la laptop** de inmediato → en segundo plano un agente trabaja en el portal de la clínica → el resultado le llega por voz y al panel del cuidador.
 
 ```
 mic_client.py (laptop)                    backend FastAPI (uvicorn)
